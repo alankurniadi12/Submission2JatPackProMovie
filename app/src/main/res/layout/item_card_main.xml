@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="180dp"
+    android:layout_height="280dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/cardItemBackgroundColor"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_poster_main"
+                android:layout_width="180dp"
+                android:layout_height="195dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitXY"
+                android:src="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/tv_rating_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_poster_main"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/rating_number"
+                android:textColor="#FFC107"
+                style="@style/TextContent"/>
+
+            <TextView
+                android:id="@+id/tv_title_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_rating_main"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/title_card_item"
+                style="@style/TitleItem"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

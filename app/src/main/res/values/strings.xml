@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Submission2JatPackProMovie</string>
+    <string name="app_name">Sub2JatPackProMovie</string>
+
+    <string name="main_title">The Movie DB</string>
+    <string name="main_title2">Million of Movie and Tv shows</string>
+    <string name="rating_number">10</string>
+    <string name="title_card_item">Title</string>
+    <string name="what_trending">What\'s Trending</string>
+    <string name="today">Today</string>
+    <string name="this_week">This Week</string>
 </resources>

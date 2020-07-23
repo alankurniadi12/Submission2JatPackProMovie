@@ -1,0 +1,3 @@
+MovieDB API
+EndPoint Respons JSON
+SearchCollection	= https://api.themoviedb.org/3/search/collection?api_key=54f1a575ff34a72f82134bf90ea5ff4f&query=iron
