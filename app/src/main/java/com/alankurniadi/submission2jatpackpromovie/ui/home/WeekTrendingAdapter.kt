@@ -10,7 +10,7 @@ import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_card_main.view.*
 
-class WeekTrendingAdapter(private val data: List<TrendingWeek>): RecyclerView.Adapter<WeekTrendingAdapter.WeekViewHolder>() {
+class WeekTrendingAdapter(private val data: List<TrendingWeek.DataWeek>): RecyclerView.Adapter<WeekTrendingAdapter.WeekViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeekViewHolder {
@@ -25,7 +25,7 @@ class WeekTrendingAdapter(private val data: List<TrendingWeek>): RecyclerView.Ad
     }
 
     class WeekViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(trendingWeek: TrendingWeek) {
+        fun bind(trendingWeek: TrendingWeek.DataWeek) {
             with(itemView) {
                 Glide.with(this)
                     .load(Url.POSTER_URL+trendingWeek.poster_path)
