@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".ui.home.HomeActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                 android:text="@string/what_trending"
                 style="@style/TitleItem"/>
 
-            <TextView
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -80,7 +80,7 @@
                 android:orientation="horizontal"
                 app:msrv_gravity="start"
                 app:msrv_speed_ms_per_inch="120"
-                app:msrv_interval="1"/>
+                app:msrv_interval="1"/>-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -100,9 +100,9 @@
                 android:visibility="gone" />
 
             <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                android:id="@+id/rv_this_week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/rv_this_week"
                 android:layout_gravity="center_vertical"
                 android:orientation="horizontal"
                 app:msrv_gravity="start"
