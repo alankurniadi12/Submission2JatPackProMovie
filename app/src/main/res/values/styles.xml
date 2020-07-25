@@ -13,7 +13,7 @@
 
     <style name="MenuTitleText" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">30sp</item>
-        <item name="android:textColor">@color/greenMenuTitle</item>
+        <item name="android:textColor">@color/yellowMenuTitle</item>
         <item name="fontFamily">@font/teko_bold</item>
     </style>
 

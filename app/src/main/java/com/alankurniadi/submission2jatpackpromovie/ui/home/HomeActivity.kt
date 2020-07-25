@@ -2,7 +2,6 @@ package com.alankurniadi.submission2jatpackpromovie.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -30,8 +29,32 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
+        // playing now movie
+        val viewmodelMovie = ViewModelProvider(this)[MovieViewModel::class.java]
+        progress_movie.visibility = View.VISIBLE
+        viewmodelMovie.setNowPlayingMovie()
+        viewmodelMovie.getNowPlayingMovie().observe(this, Observer {
+            if (it != null) {
+                progress_movie.visibility = View.GONE
+                rv_movie.adapter = MovieAdapter(it)
+                rv_movie.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            }else {
+                progress_movie.visibility = View.GONE
+            }
+        })
 
+        // Airing now tv
+        val viewModelTv = ViewModelProvider(this)[TvViewModel::class.java]
+        progress_tv.visibility = View.VISIBLE
+        viewModelTv.setNowAiringTv()
+        viewModelTv.getNowAiringTv().observe(this, Observer {
+            if (it != null) {
+                progress_tv.visibility = View.GONE
+                rv_tv.adapter = TvAdapter(it)
+                rv_tv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            }else {
+                progress_tv.visibility = View.GONE
+            }
+        })
     }
-
-
 }
