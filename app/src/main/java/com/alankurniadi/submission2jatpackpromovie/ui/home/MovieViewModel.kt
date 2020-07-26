@@ -20,7 +20,6 @@ class MovieViewModel: ViewModel() {
             override fun onFailure(call: Call<NowPlayingMovie.ResponseNowPlaying>, t: Throwable) {
                 Log.e("MovieListViewModel", t.toString())
             }
-
             override fun onResponse(
                 call: Call<NowPlayingMovie.ResponseNowPlaying>,
                 response: Response<NowPlayingMovie.ResponseNowPlaying>
@@ -28,9 +27,7 @@ class MovieViewModel: ViewModel() {
                 Log.e("MovieListViewModel", response.message())
                 val body = response.body()?.results
                 list.postValue(body)
-
             }
-
         })
     }
 

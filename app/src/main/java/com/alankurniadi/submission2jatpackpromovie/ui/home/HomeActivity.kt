@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeActivity : AppCompatActivity() {
 
+    private lateinit var movieAdapter: MovieAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,7 +38,8 @@ class HomeActivity : AppCompatActivity() {
         viewmodelMovie.getNowPlayingMovie().observe(this, Observer {
             if (it != null) {
                 progress_movie.visibility = View.GONE
-                rv_movie.adapter = MovieAdapter(it)
+                movieAdapter = MovieAdapter(this, it)
+                rv_movie.adapter = movieAdapter
                 rv_movie.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             }else {
                 progress_movie.visibility = View.GONE

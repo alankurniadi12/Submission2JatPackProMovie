@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
+import com.alankurniadi.submission2jatpackpromovie.ui.CustomeOnItemClickListener
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.item_card_main.view.*
 
 class WeekTrendingAdapter(private val data: List<TrendingWeek.DataWeek>): RecyclerView.Adapter<WeekTrendingAdapter.WeekViewHolder>() {
@@ -37,6 +39,13 @@ class WeekTrendingAdapter(private val data: List<TrendingWeek.DataWeek>): Recycl
                     tv_title_main.text = trendingWeek.original_title
                 }
                 tv_rating_main.text = trendingWeek.vote_average.toString()
+
+                /*rv_this_week.setOnClickListener(CustomeOnItemClickListener(adapterPosition, object : CustomeOnItemClickListener.OnItemClickCallback {
+                    override fun onItemClicked(view: View, position: Int) {
+                        //Arahkan ke DetailActivity
+                    }
+
+                }))*/
             }
         }
     }
