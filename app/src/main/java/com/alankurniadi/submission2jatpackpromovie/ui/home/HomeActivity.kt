@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var movieAdapter: MovieAdapter
+    private lateinit var trendingAdapter: WeekTrendingAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,8 @@ class HomeActivity : AppCompatActivity() {
         viewModelWeek.getTrendingWeek().observe(this, Observer {
             if (it != null){
                 progress_bar_week.visibility = View.GONE
-                rv_this_week.adapter = WeekTrendingAdapter(it)
+                trendingAdapter = WeekTrendingAdapter(this, it)
+                rv_this_week.adapter = trendingAdapter
                 rv_this_week.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             } else {
                 progress_bar_week.visibility = View.GONE

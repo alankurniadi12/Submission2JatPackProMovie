@@ -5,29 +5,29 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.alankurniadi.submission2jatpackpromovie.api.RetrofitConfig
-import com.alankurniadi.submission2jatpackpromovie.data.models.DetailMovie
+import com.alankurniadi.submission2jatpackpromovie.data.models.Detail
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class DetailMovieViewModel: ViewModel() {
 
-    val data = MutableLiveData<DetailMovie>()
+    val data = MutableLiveData<Detail.Movie>()
 
-    fun setDetailMovie(id: Int?) {
+    fun setDetailMovie(type: String?, id: Int?) {
         val call = RetrofitConfig().getInitInstance()
-        call.getDetailMovie(id).enqueue(object : Callback<DetailMovie>{
-            override fun onFailure(call: Call<DetailMovie>, t: Throwable) {
+        call.getDetail(type, id).enqueue(object : Callback<Detail.Movie>{
+            override fun onFailure(call: Call<Detail.Movie>, t: Throwable) {
                 Log.e("DetailMovieViewModel", t.toString())
             }
-            override fun onResponse(call: Call<DetailMovie>, response: Response<DetailMovie>) {
+            override fun onResponse(call: Call<Detail.Movie>, response: Response<Detail.Movie>) {
                 val body = response.body()
                 Log.e("DetailMovieViewModel", body.toString())
                 data.postValue(body)
             }
         })
     }
-    fun getDetailMovie(): LiveData<DetailMovie> {
+    fun getDetailMovie(): LiveData<Detail.Movie> {
         return data
     }
 }

@@ -1,6 +1,6 @@
 package com.alankurniadi.submission2jatpackpromovie.api
 
-import com.alankurniadi.submission2jatpackpromovie.api.service.ApiEndPoint
+import com.alankurniadi.submission2jatpackpromovie.api.service.EndPoint
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -11,8 +11,8 @@ class RetrofitConfig {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-    fun getInitInstance(): ApiEndPoint {
-        return getInitTrending().create(ApiEndPoint::class.java)
+    fun getInitInstance(): EndPoint {
+        return getInitTrending().create(EndPoint::class.java)
     }
 }
 

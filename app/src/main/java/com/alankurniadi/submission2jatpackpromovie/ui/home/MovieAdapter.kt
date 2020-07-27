@@ -42,7 +42,7 @@ class MovieAdapter(private val activity: Activity, private val data: List<NowPla
                     override fun onItemClicked(v: View, position: Int) {
                         val intent = Intent(activity, DetailMovieActivity::class.java)
                         intent.putExtra(DetailMovieActivity.EXTRA_POSITION, position)
-                        intent.putExtra(DetailMovieActivity.ID_MOVIE, nowPlaying)
+                        intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, nowPlaying)
                         Log.e("MovieAdapter", nowPlaying.id.toString())
                         activity.startActivity(intent)
                     }

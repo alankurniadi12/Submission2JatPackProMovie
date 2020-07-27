@@ -24,14 +24,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/tv_main_title"
                 style="@style/MenuTitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/main_title" />
-
             <TextView
                 android:id="@+id/tv_main_title2"
                 style="@style/TextContent"
