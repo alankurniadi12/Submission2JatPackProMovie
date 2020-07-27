@@ -4,5 +4,5 @@
 
 ## Screenshots
 ![home1](https://user-images.githubusercontent.com/39579462/88484511-1a839b80-cf99-11ea-8d35-5f3b4d283e2a.jpg) 
-![detail1](https://user-images.githubusercontent.com/39579462/88484477-ced0f200-cf98-11ea-9b3c-6481352c423f.jpg) 
-![detail11](https://user-images.githubusercontent.com/39579462/88484508-148dba80-cf99-11ea-973f-6659fdc7a90c.jpg)
+![detailnew1](https://user-images.githubusercontent.com/39579462/88497431-880be800-cfea-11ea-8c34-cd477110fff4.jpg)
+![detailnew](https://user-images.githubusercontent.com/39579462/88497437-8a6e4200-cfea-11ea-9140-ba0a1ca2c0a2.jpg)
