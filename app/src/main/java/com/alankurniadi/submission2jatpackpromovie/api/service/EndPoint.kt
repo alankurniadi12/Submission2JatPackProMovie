@@ -27,10 +27,15 @@ interface EndPoint {
 
     )
 
-    // Detail movie
-    @GET("{type}/{movie_id}?api_key=${Url.API_KEY}")
-    fun getDetail(
-        @Path("type") type: String?,
+    // Detail Movie
+    @GET("movie/{movie_id}?api_key=${Url.API_KEY}")
+    fun getDetailMovie(
         @Path("movie_id") id: Int?
     ): Call<Detail.Movie>
+
+    // Detail Tv
+    @GET("tv/{id}?api_key=${Url.API_KEY}")
+    fun getDetailTv(
+        @Path("id") id: Int?
+    ): Call<Detail.TvShow>
 }

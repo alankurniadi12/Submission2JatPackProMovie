@@ -11,16 +11,19 @@ import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
 import com.alankurniadi.submission2jatpackpromovie.ui.CustomeOnItemClickListener
-import com.alankurniadi.submission2jatpackpromovie.ui.detail.DetailMovieActivity
+import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieActivity
+import com.alankurniadi.submission2jatpackpromovie.ui.detail.tv.DetailTvActivity
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.item_card_main.view.*
 
-class WeekTrendingAdapter(private val activity: Activity, private val data: List<TrendingWeek.DataWeek>): RecyclerView.Adapter<WeekTrendingAdapter.WeekViewHolder>() {
+class WeekTrendingAdapter(private val data: List<TrendingWeek.DataWeek>): RecyclerView.Adapter<WeekTrendingAdapter.WeekViewHolder>() {
 
-    val movie: String = "movie"
-    val tv: String = "Tvshow"
-    var mediaType: String? = null
+    private var onItemClickCallback: OnitemClickCallback? = null
+    private var mediaType: String? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnitemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeekViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card_main, parent, false)
@@ -47,23 +50,14 @@ class WeekTrendingAdapter(private val activity: Activity, private val data: List
                 }
                 tv_rating_main.text = trendingWeek.vote_average.toString()
                 mediaType = trendingWeek.media_type
-                cv_item_main.setOnClickListener(CustomeOnItemClickListener(adapterPosition, object : CustomeOnItemClickListener.OnItemClickCallback {
-                    override fun onItemClicked(v: View, position: Int) {
-                        //Arahkan ke DetailActivity
-                        if (mediaType != tv) {
-                            Log.e("WeekTrendingAdapter", mediaType.toString())
-                            val intent = Intent(activity, DetailMovieActivity::class.java)
-                            intent.putExtra(DetailMovieActivity.EXTRA_POSITION, position)
-                            intent.putExtra(DetailMovieActivity.FROM_TRENDING, trendingWeek)
-                            activity.startActivity(intent)
-                        } else {
-                            // Jika typeData tv makan kirim ke DetaiilActivityTvSHow!!
-                        }
+                Log.e("WeekTrendingAdapter", "trendingWeek: "+trendingWeek)
 
-                    }
-
-                }))
+                cv_item_main.setOnClickListener { onItemClickCallback?.onItemClicked(trendingWeek) }
             }
         }
+    }
+
+    interface OnitemClickCallback {
+        fun onItemClicked(data: TrendingWeek.DataWeek)
     }
 }

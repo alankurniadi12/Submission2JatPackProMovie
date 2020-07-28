@@ -1,4 +1,4 @@
-package com.alankurniadi.submission2jatpackpromovie.ui.detail
+package com.alankurniadi.submission2jatpackpromovie.ui.detail.movie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,7 +16,6 @@ class DetailMovieActivity : AppCompatActivity() {
 
     var dataMovie: NowPlayingMovie.Results? = null
     var dataTrending: TrendingWeek.DataWeek? = null
-    private val movie = "movie"
 
     companion object {
         const val FROM_TRENDING = "from_trending"
@@ -37,7 +36,7 @@ class DetailMovieActivity : AppCompatActivity() {
             tb_title_movie.title = dataMovie!!.original_title
             Log.e("DetailMovieActivity", dataMovie!!.id.toString())
             val detailViewModel = ViewModelProvider(this)[DetailMovieViewModel::class.java]
-            detailViewModel.setDetailMovie(movie ,dataMovie!!.id)
+            detailViewModel.setDetailMovie(dataMovie!!.id)
             detailViewModel.getDetailMovie().observe(this, Observer {
                 //Log.e("DetailMovieActivity", it)
                 tv_vote.text = it.vote_average.toString()
@@ -54,7 +53,7 @@ class DetailMovieActivity : AppCompatActivity() {
             tb_title_movie.title = dataTrending?.original_title
             Log.e("DetailMovieActivity", dataTrending?.id.toString())
             val detailViewModel = ViewModelProvider(this)[DetailMovieViewModel::class.java]
-            detailViewModel.setDetailMovie(movie ,dataTrending?.id)
+            detailViewModel.setDetailMovie(dataTrending?.id)
             detailViewModel.getDetailMovie().observe(this, Observer {
                 //Log.e("DetailMovieActivity", it)
                 tv_vote.text = it.vote_average.toString()
@@ -68,11 +67,6 @@ class DetailMovieActivity : AppCompatActivity() {
                     .into(img_poster)
             })
         }
-
-
-        //val dataMovie = intent.getParcelableExtra(EXTRA_MOVIE) as NowPlayingMovie.Results
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

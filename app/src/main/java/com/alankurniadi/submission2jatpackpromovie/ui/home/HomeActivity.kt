@@ -1,5 +1,6 @@
 package com.alankurniadi.submission2jatpackpromovie.ui.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alankurniadi.submission2jatpackpromovie.R
+import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
+import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieActivity
+import com.alankurniadi.submission2jatpackpromovie.ui.detail.tv.DetailTvActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeActivity : AppCompatActivity() {
@@ -25,12 +29,15 @@ class HomeActivity : AppCompatActivity() {
         viewModelWeek.getTrendingWeek().observe(this, Observer {
             if (it != null){
                 progress_bar_week.visibility = View.GONE
-                trendingAdapter = WeekTrendingAdapter(this, it)
+                trendingAdapter = WeekTrendingAdapter(it)
                 rv_this_week.adapter = trendingAdapter
                 rv_this_week.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+                // Set OnClick Trending
+                setClickItemTrending()
             } else {
                 progress_bar_week.visibility = View.GONE
             }
+
         })
 
         // playing now movie
@@ -59,6 +66,26 @@ class HomeActivity : AppCompatActivity() {
                 rv_tv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             }else {
                 progress_tv.visibility = View.GONE
+            }
+        })
+    }
+
+    private fun setClickItemTrending() {
+        trendingAdapter.setOnItemClickCallback(object : WeekTrendingAdapter.OnitemClickCallback {
+            override fun onItemClicked(data: TrendingWeek.DataWeek) {
+                val mediaType = data.media_type
+                when(mediaType) {
+                    "movie" -> {
+                        val intentMovie = Intent(this@HomeActivity, DetailMovieActivity::class.java)
+                        intentMovie.putExtra(DetailMovieActivity.FROM_TRENDING, data)
+                        startActivity(intentMovie)
+                    }
+                    "tv" -> {
+                        val intentTv = Intent(this@HomeActivity, DetailTvActivity::class.java)
+                        intentTv.putExtra(DetailTvActivity.FROM_TRENDING, data)
+                        startActivity(intentTv)
+                    }
+                }
             }
         })
     }

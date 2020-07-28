@@ -1,4 +1,4 @@
-package com.alankurniadi.submission2jatpackpromovie.ui.detail
+package com.alankurniadi.submission2jatpackpromovie.ui.detail.movie
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -14,9 +14,9 @@ class DetailMovieViewModel: ViewModel() {
 
     val data = MutableLiveData<Detail.Movie>()
 
-    fun setDetailMovie(type: String?, id: Int?) {
+    fun setDetailMovie(id: Int?) {
         val call = RetrofitConfig().getInitInstance()
-        call.getDetail(type, id).enqueue(object : Callback<Detail.Movie>{
+        call.getDetailMovie(id).enqueue(object : Callback<Detail.Movie>{
             override fun onFailure(call: Call<Detail.Movie>, t: Throwable) {
                 Log.e("DetailMovieViewModel", t.toString())
             }

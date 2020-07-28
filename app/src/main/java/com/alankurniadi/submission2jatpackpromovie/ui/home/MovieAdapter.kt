@@ -11,7 +11,7 @@ import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowPlayingMovie
 import com.alankurniadi.submission2jatpackpromovie.ui.CustomeOnItemClickListener
-import com.alankurniadi.submission2jatpackpromovie.ui.detail.DetailMovieActivity
+import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_card_main.view.*
 
