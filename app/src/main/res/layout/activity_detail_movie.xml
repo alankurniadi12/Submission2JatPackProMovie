@@ -16,7 +16,7 @@
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="340dp"
+            android:layout_height="wrap_content"
             app:collapsedTitleTextAppearance="@style/TitleItem"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleTextAppearance="@android:color/transparent"
@@ -24,7 +24,7 @@
             <ImageView
                 android:id="@+id/img_backdroup_movie"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="300dp"
                 android:contentDescription="@string/cd_image_backdroup"
                 android:src="@color/colorAccent"
                 android:scaleType="fitXY"
@@ -53,8 +53,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_image"
-                android:layout_width="140dp"
-                android:layout_height="175dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
                 app:cardCornerRadius="10dp"
@@ -64,8 +64,8 @@
                 app:layout_constraintTop_toTopOf="parent">
                 <ImageView
                     android:id="@+id/img_poster"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="154dp"
+                    android:layout_height="175dp"
                     android:contentDescription="@string/cd_image_poster"
                     android:src="@color/colorAccent"
                     android:scaleType="fitXY"/>
