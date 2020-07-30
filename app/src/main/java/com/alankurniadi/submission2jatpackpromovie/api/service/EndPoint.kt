@@ -21,12 +21,6 @@ interface EndPoint {
     @GET("tv/airing_today?api_key=${Url.API_KEY}")
     fun getNowAiringTv(): Call<NowAiringTv.ResponseAiringTv>
 
-    // Detail from trending week
-    @GET("movie/{id}?api_key=${Url.API_KEY}")
-    fun getDetailTrending(
-
-    )
-
     // Detail Movie
     @GET("movie/{movie_id}?api_key=${Url.API_KEY}")
     fun getDetailMovie(

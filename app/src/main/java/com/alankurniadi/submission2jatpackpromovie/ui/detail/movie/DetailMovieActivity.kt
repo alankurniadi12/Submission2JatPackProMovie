@@ -20,7 +20,6 @@ class DetailMovieActivity : AppCompatActivity() {
     companion object {
         const val FROM_TRENDING = "from_trending"
         const val EXTRA_MOVIE = "extra_movie"
-        const val EXTRA_POSITION = "extra_position"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +38,7 @@ class DetailMovieActivity : AppCompatActivity() {
             detailViewModel.setDetailMovie(dataMovie!!.id)
             detailViewModel.getDetailMovie().observe(this, Observer {
                 //Log.e("DetailMovieActivity", it)
+                tv_title_movie.text = it.title
                 tv_vote.text = it.vote_average.toString()
                 tv_release.text = it.release_date
                 tv_detail.text = it.overview
@@ -56,6 +56,7 @@ class DetailMovieActivity : AppCompatActivity() {
             detailViewModel.setDetailMovie(dataTrending?.id)
             detailViewModel.getDetailMovie().observe(this, Observer {
                 //Log.e("DetailMovieActivity", it)
+                tv_title_movie.text = it.title
                 tv_vote.text = it.vote_average.toString()
                 tv_release.text = it.release_date
                 tv_detail.text = it.overview

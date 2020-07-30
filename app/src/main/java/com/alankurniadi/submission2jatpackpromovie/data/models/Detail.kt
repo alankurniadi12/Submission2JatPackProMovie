@@ -14,7 +14,7 @@ class Detail {
         val id: Int? = null,
         val created_by: List<CreateBy>,
         val backdrop_path: String? = null,
-        val title: String? = null,
+        val name: String? = null,
         val overview: String? = null,
         val poster_path: String? = null,
         val first_air_date: String? = null,

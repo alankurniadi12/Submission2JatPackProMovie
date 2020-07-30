@@ -73,13 +73,24 @@
             </androidx.cardview.widget.CardView>
 
             <ImageView
+                android:id="@+id/img_ic_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/live_tv_24"
+                app:layout_constraintStart_toEndOf="@+id/cv_image"
+                app:layout_constraintTop_toTopOf="@+id/cv_image"
+                tools:ignore="contentDescription"/>
+
+            <ImageView
                 android:id="@+id/img_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/ic_baseline_star_24"
                 app:layout_constraintStart_toEndOf="@+id/cv_image"
-                app:layout_constraintTop_toTopOf="@+id/cv_image"
+                app:layout_constraintTop_toBottomOf="@+id/img_ic_tv"
                 tools:ignore="contentDescription" />
 
             <TextView
@@ -113,7 +124,16 @@
                 app:layout_constraintStart_toEndOf="@+id/img_date_tv"
                 app:layout_constraintTop_toTopOf="@id/img_date_tv"/>
 
-
+            <TextView
+                android:id="@+id/tv_title_tv"
+                style="@style/TitleItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                tools:text="Titel TvShow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_image" />
 
 
             <TextView
@@ -122,11 +142,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
                 android:text="@string/overview"
                 android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cv_image" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_tv" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -144,7 +163,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/dummy_detail"
+                    tools:text="@string/dummy_detail"
                     android:textAlignment="gravity" />
             </androidx.cardview.widget.CardView>
 

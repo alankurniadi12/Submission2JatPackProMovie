@@ -17,6 +17,7 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var movieAdapter: MovieAdapter
     private lateinit var trendingAdapter: WeekTrendingAdapter
+    private lateinit var tvAdapter: TvAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +63,8 @@ class HomeActivity : AppCompatActivity() {
         viewModelTv.getNowAiringTv().observe(this, Observer {
             if (it != null) {
                 progress_tv.visibility = View.GONE
-                rv_tv.adapter = TvAdapter(it)
+                tvAdapter = TvAdapter(this, it)
+                rv_tv.adapter = tvAdapter
                 rv_tv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             }else {
                 progress_tv.visibility = View.GONE

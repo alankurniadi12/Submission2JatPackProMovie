@@ -1,6 +1,7 @@
 package com.alankurniadi.submission2jatpackpromovie.data.models
 
-import java.util.*
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
 class NowAiringTv {
 
@@ -8,10 +9,11 @@ class NowAiringTv {
         val results: List<Results>
     )
 
+    @Parcelize
     data class Results(
         val id: Int? = null,
         val name: String? = null,
         val first_air_date: String? = null,
         val poster_path: String? = null
-    )
+    ): Parcelable
 }

@@ -14,7 +14,7 @@ class DetailTvViewModel: ViewModel() {
 
     val dataTv = MutableLiveData<Detail.TvShow>()
 
-    fun setDataDetailTv(id: Int) {
+    fun setDataDetailTv(id: Int?) {
         val call = RetrofitConfig().getInitInstance()
         call.getDetailTv(id).enqueue(object : Callback<Detail.TvShow>{
             override fun onFailure(call: Call<Detail.TvShow>, t: Throwable) {

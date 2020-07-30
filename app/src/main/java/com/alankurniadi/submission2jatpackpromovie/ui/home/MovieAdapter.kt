@@ -39,16 +39,12 @@ class MovieAdapter(private val activity: Activity, private val data: List<NowPla
                 tv_rating_main.text = nowPlaying.vote_average.toString()
 
                 cv_item_main.setOnClickListener(CustomeOnItemClickListener(object : CustomeOnItemClickListener.OnItemClickCallback {
-                    /*override fun onItemClicked(v: View, position: Int) {
-                        TODO("Not yet implemented")
-                    }*/
                     override fun onItemClicked(v: View) {
                         val intent = Intent(activity, DetailMovieActivity::class.java)
                         intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, nowPlaying)
                         Log.e("MovieAdapter", nowPlaying.id.toString())
                         activity.startActivity(intent)
                     }
-
                 }))
             }
         }
