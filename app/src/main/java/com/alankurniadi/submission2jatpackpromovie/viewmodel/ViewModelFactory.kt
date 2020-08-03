@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.alankurniadi.submission2jatpackpromovie.data.source.MovieDbRepository
 import com.alankurniadi.submission2jatpackpromovie.di.Injection
+import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieViewModel
+import com.alankurniadi.submission2jatpackpromovie.ui.detail.tv.DetailTvViewModel
 import com.alankurniadi.submission2jatpackpromovie.ui.home.MovieViewModel
 import com.alankurniadi.submission2jatpackpromovie.ui.home.TvViewModel
 import com.alankurniadi.submission2jatpackpromovie.ui.home.WeekViewModel
@@ -33,6 +35,14 @@ class ViewModelFactory private constructor(private val movieDbRepository: MovieD
 
             modelClass.isAssignableFrom(TvViewModel::class.java) -> {
                 return TvViewModel(movieDbRepository) as T
+            }
+
+            modelClass.isAssignableFrom(DetailMovieViewModel::class.java) -> {
+                return DetailMovieViewModel(movieDbRepository) as T
+            }
+
+            modelClass.isAssignableFrom(DetailTvViewModel::class.java) -> {
+                return DetailTvViewModel(movieDbRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: "+ modelClass.name)
         }

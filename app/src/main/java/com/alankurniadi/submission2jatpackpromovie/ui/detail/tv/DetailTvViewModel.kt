@@ -6,13 +6,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.alankurniadi.submission2jatpackpromovie.api.RetrofitConfig
 import com.alankurniadi.submission2jatpackpromovie.data.models.Detail
+import com.alankurniadi.submission2jatpackpromovie.data.source.MovieDbRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailTvViewModel: ViewModel() {
+class DetailTvViewModel(private val movieDbRepository: MovieDbRepository): ViewModel() {
 
-    val dataTv = MutableLiveData<Detail.TvShow>()
+    /*val dataTv = MutableLiveData<Detail.TvShow>()
 
     fun setDataDetailTv(id: Int?) {
         val call = RetrofitConfig().getInitInstance()
@@ -26,8 +27,6 @@ class DetailTvViewModel: ViewModel() {
                 dataTv.postValue(body)
             }
         })
-    }
-    fun getDataDetailTv(): LiveData<Detail.TvShow> {
-        return  dataTv
-    }
+    }*/
+    fun getDataDetailTv(id: Int?): LiveData<Detail.TvShow> = movieDbRepository.getDetailTv(id)
 }

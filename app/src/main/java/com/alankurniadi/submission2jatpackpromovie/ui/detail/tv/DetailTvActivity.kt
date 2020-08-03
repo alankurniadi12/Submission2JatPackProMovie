@@ -11,6 +11,7 @@ import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.Detail
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowAiringTv
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
+import com.alankurniadi.submission2jatpackpromovie.viewmodel.ViewModelFactory
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 import kotlinx.android.synthetic.main.activity_detail_tv.*
@@ -36,11 +37,13 @@ class DetailTvActivity : AppCompatActivity() {
         dataTrending = intent.getParcelableExtra(FROM_TRENDING)
         //Log.e("DetailTvActivity", "Data Trending: $dataTrending")
 
+        val factory = ViewModelFactory.getInstance(this)
+
         if (dataTrending != null) {
             tb_title_tv.title = dataTrending?.original_name
-            val detailViewModel = ViewModelProvider(this)[DetailTvViewModel::class.java]
-            detailViewModel.setDataDetailTv(dataTrending!!.id)
-            detailViewModel.getDataDetailTv().observe(this, Observer {
+            val detailViewModel = ViewModelProvider(this, factory)[DetailTvViewModel::class.java]
+            //detailViewModel.setDataDetailTv(dataTrending!!.id)
+            detailViewModel.getDataDetailTv(dataTrending!!.id).observe(this, Observer {
                 Log.e("DetailTvActivity", "dataTrending: $it")
                 tv_title_tv.text = it.name
                 tv_vote_tv.text = it.vote_average.toString()
@@ -58,9 +61,9 @@ class DetailTvActivity : AppCompatActivity() {
         } else {
             Log.e("DetailTvActivity", "dataTvshow: $dataTvshow")
             tb_title_tv.title = dataTvshow?.name
-            val detailViewModel = ViewModelProvider(this)[DetailTvViewModel::class.java]
-            detailViewModel.setDataDetailTv(dataTvshow?.id)
-            detailViewModel.getDataDetailTv().observe(this, Observer {
+            val detailViewModel = ViewModelProvider(this, factory)[DetailTvViewModel::class.java]
+            //detailViewModel.setDataDetailTv(dataTvshow?.id)
+            detailViewModel.getDataDetailTv(dataTvshow?.id).observe(this, Observer {
                 Log.e("DetailTvActivity", "dataTvshowViewModel: $it")
                 tv_title_tv.text = it.name
                 tv_vote_tv.text = it.vote_average.toString()
