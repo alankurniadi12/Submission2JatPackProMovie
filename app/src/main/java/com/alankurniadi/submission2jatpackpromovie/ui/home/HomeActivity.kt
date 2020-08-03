@@ -3,6 +3,7 @@ package com.alankurniadi.submission2jatpackpromovie.ui.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,6 +12,7 @@ import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
 import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieActivity
 import com.alankurniadi.submission2jatpackpromovie.ui.detail.tv.DetailTvActivity
+import com.alankurniadi.submission2jatpackpromovie.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeActivity : AppCompatActivity() {
@@ -23,16 +25,21 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val factory = ViewModelFactory.getInstance(this)
+
         // trending week
-        val viewModelWeek = ViewModelProvider(this)[WeekViewModel::class.java]
+        val viewModelWeek = ViewModelProvider(this, factory)[WeekViewModel::class.java]
         progress_bar_week.visibility = View.VISIBLE
-        viewModelWeek.setTrendingWeek()
+        //viewModelWeek.setTrendingWeek()
         viewModelWeek.getTrendingWeek().observe(this, Observer {
+            Log.e("HomeActivity", "Observer TrendingWeek: "+ it.toString())
             if (it != null){
                 progress_bar_week.visibility = View.GONE
                 trendingAdapter = WeekTrendingAdapter(it)
+                trendingAdapter.notifyDataSetChanged()
                 rv_this_week.adapter = trendingAdapter
                 rv_this_week.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
                 // Set OnClick Trending
                 setClickItemTrending()
             } else {
@@ -42,13 +49,15 @@ class HomeActivity : AppCompatActivity() {
         })
 
         // playing now movie
-        val viewmodelMovie = ViewModelProvider(this)[MovieViewModel::class.java]
+        val viewmodelMovie = ViewModelProvider(this, factory)[MovieViewModel::class.java]
         progress_movie.visibility = View.VISIBLE
-        viewmodelMovie.setNowPlayingMovie()
+        //viewmodelMovie.setNowPlayingMovie()
         viewmodelMovie.getNowPlayingMovie().observe(this, Observer {
+            Log.e("HomeActivity", "Observer PlayingNow Movie: "+ it.toString())
             if (it != null) {
                 progress_movie.visibility = View.GONE
                 movieAdapter = MovieAdapter(this, it)
+                movieAdapter.notifyDataSetChanged()
                 rv_movie.adapter = movieAdapter
                 rv_movie.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             }else {
@@ -57,13 +66,15 @@ class HomeActivity : AppCompatActivity() {
         })
 
         // Airing now tv
-        val viewModelTv = ViewModelProvider(this)[TvViewModel::class.java]
+        val viewModelTv = ViewModelProvider(this, factory)[TvViewModel::class.java]
         progress_tv.visibility = View.VISIBLE
-        viewModelTv.setNowAiringTv()
+        //viewModelTv.setNowAiringTv()
         viewModelTv.getNowAiringTv().observe(this, Observer {
+            Log.e("HomeActivity", "Observer Airing TvSHow: "+ it.toString())
             if (it != null) {
                 progress_tv.visibility = View.GONE
                 tvAdapter = TvAdapter(this, it)
+                tvAdapter.notifyDataSetChanged()
                 rv_tv.adapter = tvAdapter
                 rv_tv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             }else {
