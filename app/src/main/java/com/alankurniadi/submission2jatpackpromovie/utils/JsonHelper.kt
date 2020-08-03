@@ -22,7 +22,6 @@ class JsonHelper(private val context: Context) {
             override fun onFailure(call: Call<TrendingWeek.ResponsWeek>, t: Throwable) {
                 Log.e("WeekViewModel", t.toString())
             }
-
             override fun onResponse(
                 call: Call<TrendingWeek.ResponsWeek>,
                 response: Response<TrendingWeek.ResponsWeek>
@@ -61,7 +60,6 @@ class JsonHelper(private val context: Context) {
             override fun onFailure(call: Call<NowAiringTv.ResponseAiringTv>, t: Throwable) {
                 Log.e("TvViewModel", t.toString())
             }
-
             override fun onResponse(
                 call: Call<NowAiringTv.ResponseAiringTv>,
                 response: Response<NowAiringTv.ResponseAiringTv>

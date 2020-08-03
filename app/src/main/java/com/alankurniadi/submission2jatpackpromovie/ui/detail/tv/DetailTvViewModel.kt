@@ -13,20 +13,5 @@ import retrofit2.Response
 
 class DetailTvViewModel(private val movieDbRepository: MovieDbRepository): ViewModel() {
 
-    /*val dataTv = MutableLiveData<Detail.TvShow>()
-
-    fun setDataDetailTv(id: Int?) {
-        val call = RetrofitConfig().getInitInstance()
-        call.getDetailTv(id).enqueue(object : Callback<Detail.TvShow>{
-            override fun onFailure(call: Call<Detail.TvShow>, t: Throwable) {
-                Log.e("DetailTvViewModel", t.toString())
-            }
-            override fun onResponse(call: Call<Detail.TvShow>, response: Response<Detail.TvShow>) {
-                val body = response.body()
-                Log.e("DetailTvViewModel", body.toString())
-                dataTv.postValue(body)
-            }
-        })
-    }*/
     fun getDataDetailTv(id: Int?): LiveData<Detail.TvShow> = movieDbRepository.getDetailTv(id)
 }

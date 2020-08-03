@@ -22,7 +22,6 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 
     override fun getTrendingWeek(): LiveData<List<TrendingWeek.DataWeek>> = remoteDataSource.getWeekTrending()
 
-
     override fun getNowPlayingMovie(): LiveData<List<NowPlayingMovie.Results>> = remoteDataSource.getNowPlayingMovie()
 
     override fun getAiringTv(): LiveData<List<NowAiringTv.Results>> = remoteDataSource.getNowAiringTv()

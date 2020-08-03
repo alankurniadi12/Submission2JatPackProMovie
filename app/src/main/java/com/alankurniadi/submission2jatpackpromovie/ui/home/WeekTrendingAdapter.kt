@@ -1,7 +1,5 @@
 package com.alankurniadi.submission2jatpackpromovie.ui.home
 
-import android.app.Activity
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
-import com.alankurniadi.submission2jatpackpromovie.ui.CustomeOnItemClickListener
-import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieActivity
-import com.alankurniadi.submission2jatpackpromovie.ui.detail.tv.DetailTvActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_card_main.view.*
 

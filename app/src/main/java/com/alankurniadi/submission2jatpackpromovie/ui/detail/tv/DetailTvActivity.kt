@@ -35,14 +35,12 @@ class DetailTvActivity : AppCompatActivity() {
 
         dataTvshow = intent.getParcelableExtra(EXTRA_TV)
         dataTrending = intent.getParcelableExtra(FROM_TRENDING)
-        //Log.e("DetailTvActivity", "Data Trending: $dataTrending")
 
         val factory = ViewModelFactory.getInstance(this)
 
         if (dataTrending != null) {
             tb_title_tv.title = dataTrending?.original_name
             val detailViewModel = ViewModelProvider(this, factory)[DetailTvViewModel::class.java]
-            //detailViewModel.setDataDetailTv(dataTrending!!.id)
             detailViewModel.getDataDetailTv(dataTrending!!.id).observe(this, Observer {
                 Log.e("DetailTvActivity", "dataTrending: $it")
                 tv_title_tv.text = it.name
@@ -62,7 +60,6 @@ class DetailTvActivity : AppCompatActivity() {
             Log.e("DetailTvActivity", "dataTvshow: $dataTvshow")
             tb_title_tv.title = dataTvshow?.name
             val detailViewModel = ViewModelProvider(this, factory)[DetailTvViewModel::class.java]
-            //detailViewModel.setDataDetailTv(dataTvshow?.id)
             detailViewModel.getDataDetailTv(dataTvshow?.id).observe(this, Observer {
                 Log.e("DetailTvActivity", "dataTvshowViewModel: $it")
                 tv_title_tv.text = it.name
