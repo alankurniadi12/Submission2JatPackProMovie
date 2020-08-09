@@ -30,7 +30,8 @@ class HomeActivity : AppCompatActivity() {
         // trending week
         val viewModelWeek = ViewModelProvider(this, factory)[WeekViewModel::class.java]
         progress_bar_week.visibility = View.VISIBLE
-        viewModelWeek.getTrendingWeek().observe(this, Observer {
+        viewModelWeek.getTrendingWeek()
+        viewModelWeek.data.observe(this, Observer {
             Log.e("HomeActivity", "Observer TrendingWeek: "+ it.toString())
             if (it != null){
                 progress_bar_week.visibility = View.GONE
@@ -50,7 +51,8 @@ class HomeActivity : AppCompatActivity() {
         // playing now movie
         val viewmodelMovie = ViewModelProvider(this, factory)[MovieViewModel::class.java]
         progress_movie.visibility = View.VISIBLE
-        viewmodelMovie.getNowPlayingMovie().observe(this, Observer {
+        viewmodelMovie.getNowPlayingMovie()
+        viewmodelMovie.data.observe(this, Observer {
             Log.e("HomeActivity", "Observer PlayingNow Movie: "+ it.toString())
             if (it != null) {
                 progress_movie.visibility = View.GONE
@@ -66,7 +68,8 @@ class HomeActivity : AppCompatActivity() {
         // Airing now tv
         val viewModelTv = ViewModelProvider(this, factory)[TvViewModel::class.java]
         progress_tv.visibility = View.VISIBLE
-        viewModelTv.getNowAiringTv().observe(this, Observer {
+        viewModelTv.getNowAiringTv()
+        viewModelTv.data.observe(this, Observer {
             Log.e("HomeActivity", "Observer Airing TvSHow: "+ it.toString())
             if (it != null) {
                 progress_tv.visibility = View.GONE
@@ -83,8 +86,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setClickItemTrending() {
         trendingAdapter.setOnItemClickCallback(object : WeekTrendingAdapter.OnitemClickCallback {
             override fun onItemClicked(data: TrendingWeek.DataWeek) {
-                val mediaType = data.media_type
-                when(mediaType) {
+                when(data.media_type) {
                     "movie" -> {
                         val intentMovie = Intent(this@HomeActivity, DetailMovieActivity::class.java)
                         intentMovie.putExtra(DetailMovieActivity.FROM_TRENDING, data)

@@ -1,8 +1,8 @@
 package com.alankurniadi.submission2jatpackpromovie.ui.detail.tv
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +13,6 @@ import com.alankurniadi.submission2jatpackpromovie.data.models.NowAiringTv
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
 import com.alankurniadi.submission2jatpackpromovie.viewmodel.ViewModelFactory
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_detail_movie.*
 import kotlinx.android.synthetic.main.activity_detail_tv.*
 
 class DetailTvActivity : AppCompatActivity() {

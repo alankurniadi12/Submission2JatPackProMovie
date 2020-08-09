@@ -1,0 +1,57 @@
+Unit Test Scenario
+
+WeekViewModelTest
+	*Memuat List Trending Weekly
+		-Memanipulasi data ketika pemanggilan data di kelas repository.
+		-Memastikan metode dikelas repository terpanggil.
+		-Memastikan data List Trending berhasil diload(dari datadummy).
+		-Memastikan jumlah data list sesuai yang diharapkan.
+
+MovieViewModelTest
+	*Memuat List Movie
+		-Memanipulasi data ketika pemanggilan data di kelas repository.
+		-Memastikan metode dikelas repository terpanggil
+		-Memastikan data list movie berhasil diload (dari datadummy)
+		-Memastikan jumlah list sesuai yang diharapkan
+
+TvViewModelTest
+	*Memuat List TvShow Airing Today
+		-Memanipulasi data ketika pemanggilan data di kelas repository.
+		-Memastikan metode dikelas repository terpanggil
+		-Memastikan data list TvShow berhasil diload (dari datadummy)
+		-Memastikan jumlah list sesuai yang diharapkan
+
+DetailMovieViewModelTest
+	*Memuat Detail Movie
+		-Memanipulasi data ketika pemanggilan data di kelas repository.
+		-Memastikan metode dikelas repository terpanggil
+		-Pengecekan data content
+		-Bandingkan data Detail apakah sudah sesuai dengan yang diharapkan.
+
+DetailTvViewModelTest
+	*Memuat Detail TvShow
+		-Memanipulasi data ketika pemanggilan data di kelas repository.
+		-Memastikan metode dikelas repository terpanggil
+		-Pengecekan data content
+		-Bandingkan data Detail apakah sudah sesuai dengan yang diharapkan.
+
+Instrument Test Scenario
+
+	Week Trending List 
+		-Memastikan list Trending tampil
+		-Gulir kesamping list trending sampai ke posisi terahir
+		-klik pada posisi pertama dari trending list
+		-Detail hasil klik dalam keadaan tampil
+
+	Movie Playing Now List
+		-Memastikan List tampil
+		-Gulir kesamping list movie hingga keposisi terahir
+		-Klik pada posisi pertama dari list
+		-Detail movie dalam keadaan tampil
+
+	TvShow List
+		-Memastikan list TvShow dalam keadaan tampil
+		-Gulir list hingga ke posisi terahir
+		-Klik item pada posisi pertama
+		-Detail TvShow dalam keadaan tampil
+	

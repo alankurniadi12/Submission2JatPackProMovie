@@ -7,5 +7,10 @@ import com.alankurniadi.submission2jatpackpromovie.data.source.MovieDbRepository
 
 class WeekViewModel(private val movieDbRepository: MovieDbRepository) : ViewModel() {
 
-    fun getTrendingWeek(): LiveData<List<TrendingWeek.DataWeek>> = movieDbRepository.getTrendingWeek()
+    lateinit var data: LiveData<List<TrendingWeek.DataWeek>>
+
+    fun getTrendingWeek() {
+        data = movieDbRepository.getTrendingWeek()
+    }
+
 }

@@ -7,5 +7,9 @@ import com.alankurniadi.submission2jatpackpromovie.data.source.MovieDbRepository
 
 class TvViewModel(private val movieDbRepository: MovieDbRepository): ViewModel() {
 
-    fun getNowAiringTv(): LiveData<List<NowAiringTv.Results>> = movieDbRepository.getAiringTv()
+    lateinit var data: LiveData<List<NowAiringTv.Results>>
+
+    fun getNowAiringTv() {
+        data = movieDbRepository.getAiringTv()
+    }
 }
