@@ -59,6 +59,127 @@ object DataDummy {
             "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
             "movie"))
 
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"))
+
+        trending.add(TrendingWeek.DataWeek(
+            385103,
+            7.6,
+            "Scoob!",
+            "Scoob!",
+            "/fKtYXUhX5fxMxzQfyUcQW9Shik6.jpg",
+            "movie"
+        ))
+
         return trending
     }
 
@@ -95,6 +216,96 @@ object DataDummy {
             "/hPkqY2EMqWUnFEoedukilIUieVG.jpg",
             "The Outpost",
             6.6 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
+
+        movie.add(NowPlayingMovie.Results(
+            454626,
+            "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+            "Sonic the Hedgehog",
+            7.5 ))
 
         movie.add(NowPlayingMovie.Results(
             454626,
@@ -142,6 +353,111 @@ object DataDummy {
             "Yellowstone",
             "2018-06-20",
             "/43nVQqVsrshaOx9GfJq6JstsfCX.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
+        ))
+
+        tvShow.add(NowAiringTv.Results(
+            45782,
+            "Sword Art Online",
+            "2012-07-08",
+            "/zLdXxodgz0UN0RCca8uxBq3EGTg.jpg"
         ))
 
         tvShow.add(NowAiringTv.Results(

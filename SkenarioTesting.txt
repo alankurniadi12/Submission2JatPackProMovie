@@ -37,21 +37,38 @@ DetailTvViewModelTest
 
 Instrument Test Scenario
 
+fun loadAllList()
 	Week Trending List 
-		-Memastikan list Trending tampil
-		-Gulir kesamping list trending sampai ke posisi terahir
-		-klik pada posisi pertama dari trending list
-		-Detail hasil klik dalam keadaan tampil
+		-Geser ke kanan list trending.
+		-Geser ke kiri list trending.
+		-Memastikan list Trending tampil.
+		
 
 	Movie Playing Now List
-		-Memastikan List tampil
-		-Gulir kesamping list movie hingga keposisi terahir
-		-Klik pada posisi pertama dari list
-		-Detail movie dalam keadaan tampil
+		-Geser ke kanan list Movie.
+		-Geser ke kiri list Movie.
+		-Memastikan List tampil.
+
 
 	TvShow List
+		-Geser ke kanan list Tv.
+		-Geser ke kiri list Tv.
 		-Memastikan list TvShow dalam keadaan tampil
-		-Gulir list hingga ke posisi terahir
-		-Klik item pada posisi pertama
-		-Detail TvShow dalam keadaan tampil
+
+
+fun loadDetailTrending()
+	-Memastikan list Trending tampil
+	-Klik item pada posisi pertama
+	-Memastikan data detail tampil
+	-Gulir atas-bawah halaman detail
+
+fun loadDetailMovie()
+	-
 	
+
+
+
+
+
+
+
