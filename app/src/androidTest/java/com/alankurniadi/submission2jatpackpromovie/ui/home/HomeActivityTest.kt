@@ -3,7 +3,6 @@ package com.alankurniadi.submission2jatpackpromovie.ui.home
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ScrollToAction
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
@@ -39,18 +38,34 @@ class HomeActivityTest {
 
     @Test
     fun loadAllList(){
-        //onView(withId(R.id.rv_this_week)).perform(swipeLeft())
-        //onView(withId(R.id.rv_this_week)).perform(swipeRight())
+        onView(withId(R.id.activity_main)).check(matches(isDisplayed()))
+        onView(withId(R.id.activity_main)).perform(swipeDown())
+        onView(withId(R.id.tv_main_title)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_main_title2)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_whats_trending)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_whats_trending)).perform(click())
+        onView(withId(R.id.tv_this_week)).check(matches(isDisplayed()))
+        onView(withId(R.id.cv_this_week)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.rv_this_week)).perform(swipeLeft())
+        onView(withId(R.id.rv_this_week)).perform(swipeRight())
         onView(withId(R.id.rv_this_week)).check(matches(isDisplayed()))
 
-        onView(withId(R.id.rv_movie)).check(matches(isDisplayed()))
-        onView(withId(R.id.rv_movie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovie.size))
+        onView(withId(R.id.activity_main)).perform(swipeUp())
 
-        onView(withId(R.id.rv_tv)).perform(ScrollToAction())
+        onView(withId(R.id.tv_playing_now)).check(matches(isDisplayed()))
+        onView(withId(R.id.cv_movie)).check(matches(isDisplayed()))
+        onView(withId(R.id.rv_movie)).perform(swipeLeft())
+        onView(withId(R.id.rv_movie)).perform(swipeRight())
+        onView(withId(R.id.rv_movie)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.cv_movie)).check(matches(isDisplayed()))
+        onView(withId(R.id.rv_tv)).perform(swipeLeft())
+        onView(withId(R.id.rv_tv)).perform(swipeRight())
         onView(withId(R.id.rv_tv)).check(matches(isDisplayed()))
-        onView(withId(R.id.rv_tv)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyTvShow.size))
 
     }
+
 
     @Test
     fun loadDetailTrending() {
