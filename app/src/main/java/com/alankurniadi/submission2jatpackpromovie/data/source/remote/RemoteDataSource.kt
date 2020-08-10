@@ -10,6 +10,14 @@ import com.alankurniadi.submission2jatpackpromovie.utils.JsonHelper
 
 class RemoteDataSource private constructor(private val jsonHelper: JsonHelper){
 
+
+    lateinit var valueTrending: MutableLiveData<List<TrendingWeek.DataWeek>>
+    lateinit var valueMovie: MutableLiveData<List<NowPlayingMovie.Results>>
+    lateinit var valueTv: MutableLiveData<List<NowAiringTv.Results>>
+    lateinit var valueMovieDetail: MutableLiveData<Detail.Movie>
+    lateinit var valueTvDetail: MutableLiveData<Detail.TvShow>
+
+
     companion object {
         @Volatile
         private var instance: RemoteDataSource? = null
@@ -21,44 +29,39 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper){
 
     //For HomeActivity
     //fun getWeekTrending(): MutableLiveData<List<TrendingWeek.DataWeek>> = jsonHelper.loadTrendingWeek()
-    fun getWeekTrending() : MutableLiveData<List<TrendingWeek.DataWeek>> {
+    fun getWeekTrending() {
         EspressoIdlingResource.increment()
-        val value = jsonHelper.loadTrendingWeek()
+        valueTrending = jsonHelper.loadTrendingWeek()
         EspressoIdlingResource.decrement()
-        return value
     }
 
     //fun getNowPlayingMovie(): MutableLiveData<List<NowPlayingMovie.Results>> = jsonHelper.loadNowPlayingMovie()
-    fun getNowPlayingMovie(): MutableLiveData<List<NowPlayingMovie.Results>> {
+    fun getNowPlayingMovie() {
         EspressoIdlingResource.increment()
-        val value = jsonHelper.loadNowPlayingMovie()
+        valueMovie = jsonHelper.loadNowPlayingMovie()
         EspressoIdlingResource.decrement()
-        return value
     }
 
     //fun getNowAiringTv(): MutableLiveData<List<NowAiringTv.Results>> = jsonHelper.loadTvShow()
-    fun getNowAiringTv(): MutableLiveData<List<NowAiringTv.Results>> {
+    fun getNowAiringTv() {
         EspressoIdlingResource.increment()
-        val value = jsonHelper.loadTvShow()
+        valueTv = jsonHelper.loadTvShow()
         EspressoIdlingResource.decrement()
-        return value
     }
 
     //DetailMovieActivity
     //fun getDetailMovie(id: Int?): MutableLiveData<Detail.Movie> = jsonHelper.loadDetailMovie(id)
-    fun getDetailMovie(id: Int?): MutableLiveData<Detail.Movie> {
+    fun getDetailMovie(id: Int?) {
         EspressoIdlingResource.increment()
-        val value =jsonHelper.loadDetailMovie(id)
+        valueMovieDetail = jsonHelper.loadDetailMovie(id)
         EspressoIdlingResource.decrement()
-        return value
     }
 
     //DetailTvActivity
-    fun getDetailTv(id: Int?):  MutableLiveData<Detail.TvShow>{
+    fun getDetailTv(id: Int?){
         EspressoIdlingResource.increment()
-        val value =jsonHelper.loadDetailTvShow(id)
+        valueTvDetail =jsonHelper.loadDetailTvShow(id)
         EspressoIdlingResource.decrement()
-        return value
     }
 
 
