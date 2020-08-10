@@ -14,7 +14,6 @@ import retrofit2.Response
 
 class JsonHelper(private val context: Context) {
 
-    //For HomeActivity
     fun loadTrendingWeek(): MutableLiveData<List<TrendingWeek.DataWeek>>{
         val list = MutableLiveData <List<TrendingWeek.DataWeek>>()
         val call = RetrofitConfig().getInitInstance()
@@ -35,6 +34,7 @@ class JsonHelper(private val context: Context) {
     }
 
     fun loadNowPlayingMovie(): MutableLiveData<List<NowPlayingMovie.Results>> {
+        EspressoIdlingResource.increment()
         val list = MutableLiveData<List<NowPlayingMovie.Results>> ()
         val call = RetrofitConfig().getInitInstance()
         call.getNowPlayingMovie().enqueue(object : Callback<NowPlayingMovie.ResponseNowPlaying> {
@@ -50,7 +50,9 @@ class JsonHelper(private val context: Context) {
                 list.postValue(body)
             }
         })
+        EspressoIdlingResource.decrement()
         return list
+
     }
 
     fun loadTvShow(): MutableLiveData<List<NowAiringTv.Results>> {
@@ -72,7 +74,6 @@ class JsonHelper(private val context: Context) {
         return list
     }
 
-    //DetailMovieActivity
     fun loadDetailMovie(id: Int?): MutableLiveData<Detail.Movie> {
         val data = MutableLiveData<Detail.Movie>()
         val call = RetrofitConfig().getInitInstance()
@@ -105,6 +106,5 @@ class JsonHelper(private val context: Context) {
         })
         return dataTv
     }
-
 
 }

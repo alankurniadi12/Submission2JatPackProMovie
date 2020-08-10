@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowAiringTv
-import com.alankurniadi.submission2jatpackpromovie.ui.CustomeOnItemClickListener
+import com.alankurniadi.submission2jatpackpromovie.ui.CostumeOnItemClickListener
 import com.alankurniadi.submission2jatpackpromovie.ui.detail.tv.DetailTvActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_card_main.view.*
@@ -37,7 +37,7 @@ class TvAdapter(private val activity: Activity, private val data: List<NowAiring
                 tv_title_main.text = nowAiringTv.name
                 tv_air_date.text = nowAiringTv.first_air_date
 
-                cv_item_main.setOnClickListener(CustomeOnItemClickListener(object : CustomeOnItemClickListener.OnItemClickCallback {
+                cv_item_main.setOnClickListener(CostumeOnItemClickListener(object : CostumeOnItemClickListener.OnItemClickCallback {
                     override fun onItemClicked(v: View) {
                         val intent = Intent(activity, DetailTvActivity::class.java)
                         intent.putExtra(DetailTvActivity.EXTRA_TV, nowAiringTv)

@@ -40,7 +40,6 @@ class HomeActivity : AppCompatActivity() {
                 rv_this_week.adapter = trendingAdapter
                 rv_this_week.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-                // Set OnClick Trending
                 setClickItemTrending()
             } else {
                 progress_bar_week.visibility = View.GONE

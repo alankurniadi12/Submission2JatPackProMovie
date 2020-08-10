@@ -27,64 +27,34 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper){
         }
     }
 
-    //For HomeActivity
-    //fun getWeekTrending(): MutableLiveData<List<TrendingWeek.DataWeek>> = jsonHelper.loadTrendingWeek()
     fun getWeekTrending() {
         EspressoIdlingResource.increment()
         valueTrending = jsonHelper.loadTrendingWeek()
         EspressoIdlingResource.decrement()
     }
 
-    //fun getNowPlayingMovie(): MutableLiveData<List<NowPlayingMovie.Results>> = jsonHelper.loadNowPlayingMovie()
     fun getNowPlayingMovie() {
         EspressoIdlingResource.increment()
         valueMovie = jsonHelper.loadNowPlayingMovie()
         EspressoIdlingResource.decrement()
     }
 
-    //fun getNowAiringTv(): MutableLiveData<List<NowAiringTv.Results>> = jsonHelper.loadTvShow()
     fun getNowAiringTv() {
         EspressoIdlingResource.increment()
         valueTv = jsonHelper.loadTvShow()
         EspressoIdlingResource.decrement()
     }
 
-    //DetailMovieActivity
-    //fun getDetailMovie(id: Int?): MutableLiveData<Detail.Movie> = jsonHelper.loadDetailMovie(id)
     fun getDetailMovie(id: Int?) {
         EspressoIdlingResource.increment()
         valueMovieDetail = jsonHelper.loadDetailMovie(id)
         EspressoIdlingResource.decrement()
     }
 
-    //DetailTvActivity
     fun getDetailTv(id: Int?){
         EspressoIdlingResource.increment()
         valueTvDetail =jsonHelper.loadDetailTvShow(id)
         EspressoIdlingResource.decrement()
     }
-
-
-
-    /*interface LoadWeekTrending {
-        fun onAllWeekTrending(trendingWeek: MutableLiveData<List<TrendingWeek.DataWeek>>)
-    }
-
-    interface LoadNowPlayingMovie {
-        fun onNowPlayingMovie(nowPlayingMovie: MutableLiveData<List<NowPlayingMovie.Results>>)
-    }
-
-    interface LoadNowAiringTv {
-        fun onNowAiringTv(nowAiringTv: MutableLiveData<List<NowAiringTv.Results>>)
-    }
-
-    interface LoadDetailMovie {
-        fun onDetailMovie(detail: MutableLiveData<Detail.Movie>)
-    }
-
-    interface LoadDetailTv {
-        fun onDetailTv(detail: MutableLiveData<Detail.TvShow>)
-    }*/
-
 
 }

@@ -57,13 +57,30 @@ fun loadAllList()
 
 
 fun loadDetailTrending()
-	-Memastikan list Trending tampil
+	-Memastikan list Trending dihalaman utama tampil
 	-Klik item pada posisi pertama
 	-Memastikan data detail tampil
 	-Gulir atas-bawah halaman detail
+	-PressBack
+	-MainActivity tampil
 
 fun loadDetailMovie()
-	-
+	-Memastikan list Movie diahalam utama tampil
+	-Klik item pada posisi pertama
+	-Memastikan data detail tampil
+	-Gulir atas-bawah halaman detail
+	-PressBack
+	-MainActivity tampil
+	
+fun loadTvShowList()
+	-Memastikan list TvShow dihalam utama tampil
+	-Klik item pada posisi pertama
+	-Memastikan data detail tampil
+	-Gulir atas-bawah halaman detail
+	-PressBack
+	-MainActivity tampil
+
+
 	
 
 

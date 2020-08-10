@@ -48,7 +48,7 @@ class WeekViewModelTest {
         verify<MovieDbRepository>(movieDbRepository).getTrendingWeek()
 
         assertNotNull(dataTrending)
-        assertEquals(6, dataTrending.value?.size)
+        assertEquals(21, dataTrending.value?.size)
 
         viewModel.data.observeForever(observer)
         verify(observer).onChanged(dataDummy)

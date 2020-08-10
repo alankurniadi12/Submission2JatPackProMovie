@@ -1,8 +1,8 @@
 package com.alankurniadi.submission2jatpackpromovie.ui.detail.movie
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.alankurniadi.submission2jatpackpromovie.R
@@ -38,9 +38,7 @@ class DetailMovieActivity : AppCompatActivity() {
             tb_title_movie.title = dataMovie!!.original_title
             Log.e("DetailMovieActivity", dataMovie!!.id.toString())
             val detailViewModel = ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
-            //detailViewModel.setDetailMovie(dataMovie!!.id)
             detailViewModel.getDetailMovie(dataMovie!!.id).observe(this, Observer {
-                //Log.e("DetailMovieActivity", it)
                 tv_title_movie.text = it.title
                 tv_vote.text = it.vote_average.toString()
                 tv_release.text = it.release_date
@@ -56,9 +54,7 @@ class DetailMovieActivity : AppCompatActivity() {
             tb_title_movie.title = dataTrending?.original_title
             Log.e("DetailMovieActivity", dataTrending?.id.toString())
             val detailViewModel = ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
-            //detailViewModel.setDetailMovie(dataTrending?.id)
             detailViewModel.getDetailMovie(dataTrending?.id).observe(this, Observer {data ->
-                //Log.e("DetailMovieActivity", it)
                 tv_title_movie.text = data.title
                 tv_vote.text = data.vote_average.toString()
                 tv_release.text = data.release_date
@@ -70,9 +66,6 @@ class DetailMovieActivity : AppCompatActivity() {
                     .load(Url.POSTER_URL+data.poster_path)
                     .into(img_poster)
             })
-
-
-
         }
     }
 

@@ -48,7 +48,7 @@ class TvViewModelTest {
         verify<MovieDbRepository>(movieDbRepository).getAiringTv()
 
         assertNotNull(dataTv)
-        assertEquals(6, dataTv.value?.size)
+        assertEquals(21, dataTv.value?.size)
 
         viewmodel.data.observeForever(observer)
         verify(observer).onChanged(dataDummy)

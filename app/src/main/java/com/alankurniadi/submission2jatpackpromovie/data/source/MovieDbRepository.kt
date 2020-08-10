@@ -23,28 +23,15 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
         return remoteDataSource.valueTrending
     }
 
-    /*override fun getTrendingWeek(): LiveData<List<TrendingWeek.DataWeek>> {
-        val trendingResult = MutableLiveData<List<TrendingWeek.DataWeek>>()
-        remoteDataSource.getWeekTrending(object : RemoteDataSource.LoadWeekTrending {
-            override fun onAllWeekTrending(trendingWeek: MutableLiveData<List<TrendingWeek.DataWeek>>) {
-                val trendingWeekList = trendingWeek.value
-                trendingResult.postValue(trendingWeekList)
-            }
-        })
-        return trendingResult
-    }*/
-
     override fun getNowPlayingMovie(): LiveData<List<NowPlayingMovie.Results>>{
         remoteDataSource.getNowPlayingMovie()
         return remoteDataSource.valueMovie
     }
 
-
     override fun getAiringTv(): LiveData<List<NowAiringTv.Results>>{
         remoteDataSource.getNowAiringTv()
         return remoteDataSource.valueTv
     }
-
 
     override fun getDetailMovie(id: Int?): LiveData<Detail.Movie> {
         remoteDataSource.getDetailMovie(id)
@@ -55,5 +42,4 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
         remoteDataSource.getDetailTv(id)
         return remoteDataSource.valueTvDetail
     }
-
 }

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowPlayingMovie
-import com.alankurniadi.submission2jatpackpromovie.ui.CustomeOnItemClickListener
+import com.alankurniadi.submission2jatpackpromovie.ui.CostumeOnItemClickListener
 import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_card_main.view.*
@@ -38,7 +38,7 @@ class MovieAdapter(private val activity: Activity, private val data: List<NowPla
                 tv_title_main.text = nowPlaying.original_title
                 tv_rating_main.text = nowPlaying.vote_average.toString()
 
-                cv_item_main.setOnClickListener(CustomeOnItemClickListener(object : CustomeOnItemClickListener.OnItemClickCallback {
+                cv_item_main.setOnClickListener(CostumeOnItemClickListener(object : CostumeOnItemClickListener.OnItemClickCallback {
                     override fun onItemClicked(v: View) {
                         val intent = Intent(activity, DetailMovieActivity::class.java)
                         intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, nowPlaying)

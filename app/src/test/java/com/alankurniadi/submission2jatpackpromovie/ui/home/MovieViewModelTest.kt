@@ -48,7 +48,7 @@ class MovieViewModelTest {
         verify<MovieDbRepository>(movieDbRepository).getNowPlayingMovie()
 
         assertNotNull(dataMovie)
-        assertEquals(6, dataMovie.value?.size)
+        assertEquals(21, dataMovie.value?.size)
 
         viewModel.data.observeForever(observer)
         verify(observer).onChanged(dataDummy)

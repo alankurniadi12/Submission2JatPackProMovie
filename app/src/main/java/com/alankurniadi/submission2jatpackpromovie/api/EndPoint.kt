@@ -1,6 +1,5 @@
-package com.alankurniadi.submission2jatpackpromovie.api.service
+package com.alankurniadi.submission2jatpackpromovie.api
 
-import com.alankurniadi.submission2jatpackpromovie.api.Url
 import com.alankurniadi.submission2jatpackpromovie.data.models.Detail
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowAiringTv
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowPlayingMovie
