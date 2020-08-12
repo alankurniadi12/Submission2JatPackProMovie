@@ -14,8 +14,8 @@ import retrofit2.Response
 
 class JsonHelper(private val context: Context) {
 
-    fun loadTrendingWeek(): MutableLiveData<List<TrendingWeek.DataWeek>>{
-        val list = MutableLiveData <List<TrendingWeek.DataWeek>>()
+    fun loadTrendingWeek(): MutableLiveData<List<TrendingWeek.DataWeek>> {
+        val list = MutableLiveData<List<TrendingWeek.DataWeek>>()
         val call = RetrofitConfig().getInitInstance()
         call.getTrendingWeek().enqueue(object : Callback<TrendingWeek.ResponsWeek> {
             override fun onFailure(call: Call<TrendingWeek.ResponsWeek>, t: Throwable) {
