@@ -2,7 +2,6 @@ package com.alankurniadi.submission2jatpackpromovie.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -12,6 +11,7 @@ import com.alankurniadi.submission2jatpackpromovie.R
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
 import com.alankurniadi.submission2jatpackpromovie.ui.detail.movie.DetailMovieActivity
 import com.alankurniadi.submission2jatpackpromovie.ui.detail.tv.DetailTvActivity
+import com.alankurniadi.submission2jatpackpromovie.utils.EspressoIdlingResource
 import com.alankurniadi.submission2jatpackpromovie.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,8 +31,8 @@ class HomeActivity : AppCompatActivity() {
         val viewModelWeek = ViewModelProvider(this, factory)[WeekViewModel::class.java]
         progress_bar_week.visibility = View.VISIBLE
         viewModelWeek.getTrendingWeek()
+        EspressoIdlingResource.increment()
         viewModelWeek.data.observe(this, Observer {
-            Log.e("HomeActivity", "Observer TrendingWeek: "+ it.toString())
             if (it != null){
                 progress_bar_week.visibility = View.GONE
                 trendingAdapter = WeekTrendingAdapter(it)
@@ -44,6 +44,7 @@ class HomeActivity : AppCompatActivity() {
             } else {
                 progress_bar_week.visibility = View.GONE
             }
+            EspressoIdlingResource.decrement()
 
         })
 
@@ -51,8 +52,8 @@ class HomeActivity : AppCompatActivity() {
         val viewmodelMovie = ViewModelProvider(this, factory)[MovieViewModel::class.java]
         progress_movie.visibility = View.VISIBLE
         viewmodelMovie.getNowPlayingMovie()
+        EspressoIdlingResource.increment()
         viewmodelMovie.data.observe(this, Observer {
-            Log.e("HomeActivity", "Observer PlayingNow Movie: "+ it.toString())
             if (it != null) {
                 progress_movie.visibility = View.GONE
                 movieAdapter = MovieAdapter(this, it)
@@ -62,14 +63,15 @@ class HomeActivity : AppCompatActivity() {
             }else {
                 progress_movie.visibility = View.GONE
             }
+            EspressoIdlingResource.decrement()
         })
 
         // Airing now tv
         val viewModelTv = ViewModelProvider(this, factory)[TvViewModel::class.java]
         progress_tv.visibility = View.VISIBLE
         viewModelTv.getNowAiringTv()
+        EspressoIdlingResource.increment()
         viewModelTv.data.observe(this, Observer {
-            Log.e("HomeActivity", "Observer Airing TvSHow: "+ it.toString())
             if (it != null) {
                 progress_tv.visibility = View.GONE
                 tvAdapter = TvAdapter(this, it)
@@ -79,6 +81,7 @@ class HomeActivity : AppCompatActivity() {
             }else {
                 progress_tv.visibility = View.GONE
             }
+            EspressoIdlingResource.decrement()
         })
     }
 

@@ -40,7 +40,7 @@ class DetailTvActivity : AppCompatActivity() {
         if (dataTrending != null) {
             tb_title_tv.title = dataTrending?.original_name
             val detailViewModel = ViewModelProvider(this, factory)[DetailTvViewModel::class.java]
-            detailViewModel.getDataDetailTv(dataTrending!!.id).observe(this, Observer {
+            detailViewModel.getDataDetailTv(dataTrending?.id).observe(this, Observer {
                 Log.e("DetailTvActivity", "dataTrending: $it")
                 tv_title_tv.text = it.name
                 tv_vote_tv.text = it.vote_average.toString()

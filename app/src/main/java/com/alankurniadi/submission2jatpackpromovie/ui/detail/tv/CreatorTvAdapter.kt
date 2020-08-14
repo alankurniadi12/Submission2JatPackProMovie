@@ -1,6 +1,5 @@
 package com.alankurniadi.submission2jatpackpromovie.ui.detail.tv
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +26,6 @@ class CreatorTvAdapter(private val data : List<Detail.CreateBy>): RecyclerView.A
 
     class CreatorTvViewModel(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(detail: Detail.CreateBy) {
-            Log.e("CreatorTvAdapter", detail.toString())
             with(itemView) {
                 Glide.with(this)
                     .load(Url.POSTER_PROFILE+detail.profile_path)

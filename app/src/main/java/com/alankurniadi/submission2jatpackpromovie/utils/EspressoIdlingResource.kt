@@ -13,5 +13,4 @@ object EspressoIdlingResource {
     fun decrement() {
         espressoTestIdlingResource.decrement()
     }
-
 }

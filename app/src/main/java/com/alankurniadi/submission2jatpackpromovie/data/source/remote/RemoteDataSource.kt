@@ -5,16 +5,9 @@ import com.alankurniadi.submission2jatpackpromovie.data.models.Detail
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowAiringTv
 import com.alankurniadi.submission2jatpackpromovie.data.models.NowPlayingMovie
 import com.alankurniadi.submission2jatpackpromovie.data.models.TrendingWeek
-import com.alankurniadi.submission2jatpackpromovie.utils.EspressoIdlingResource
 import com.alankurniadi.submission2jatpackpromovie.utils.JsonHelper
 
 class RemoteDataSource private constructor(private val jsonHelper: JsonHelper){
-
-    lateinit var valueTrending: MutableLiveData<List<TrendingWeek.DataWeek>>
-    lateinit var valueMovie: MutableLiveData<List<NowPlayingMovie.Results>>
-    lateinit var valueTv: MutableLiveData<List<NowAiringTv.Results>>
-    lateinit var valueMovieDetail: MutableLiveData<Detail.Movie>
-    lateinit var valueTvDetail: MutableLiveData<Detail.TvShow>
 
     companion object {
         @Volatile
@@ -26,34 +19,25 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper){
     }
 
     fun getWeekTrending(callback: LoadTrendingCallback) {
-        EspressoIdlingResource.increment()
         callback.onTrendingReceived(jsonHelper.loadTrendingWeek())
-        EspressoIdlingResource.decrement()
     }
 
     fun getNowPlayingMovie(callback: LoadNowPlayingMovie) {
-        EspressoIdlingResource.increment()
         callback.onPlayingNowMovie(jsonHelper.loadNowPlayingMovie())
-        EspressoIdlingResource.decrement()
     }
 
     fun getNowAiringTv(callback: LoadNowAiringTv) {
-        EspressoIdlingResource.increment()
         callback.onAiringnowTv(jsonHelper.loadTvShow())
-        EspressoIdlingResource.decrement()
     }
 
     fun getDetailMovie(id: Int?, callback: LoadDetailMovie) {
-        EspressoIdlingResource.increment()
         callback.onDetailMovie(jsonHelper.loadDetailMovie(id))
-        EspressoIdlingResource.decrement()
     }
 
     fun getDetailTv(id: Int?, callback: LoadDetailTv) {
-        EspressoIdlingResource.increment()
         callback.onDetailTv(jsonHelper.loadDetailTvShow(id))
-        EspressoIdlingResource.decrement()
     }
+
 
 
     interface LoadTrendingCallback{
@@ -75,35 +59,5 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper){
     interface LoadDetailTv {
         fun onDetailTv(detailTv: MutableLiveData<Detail.TvShow>)
     }
-    /*fun getWeekTrending() {
-        EspressoIdlingResource.increment()
-        valueTrending = jsonHelper.loadTrendingWeek()
-        EspressoIdlingResource.decrement()
-    }
-
-    fun getNowPlayingMovie() {
-        EspressoIdlingResource.increment()
-        valueMovie = jsonHelper.loadNowPlayingMovie()
-        EspressoIdlingResource.decrement()
-    }
-
-    fun getNowAiringTv() {
-        EspressoIdlingResource.increment()
-        valueTv = jsonHelper.loadTvShow()
-        EspressoIdlingResource.decrement()
-    }
-
-    fun getDetailMovie(id: Int?) {
-        EspressoIdlingResource.increment()
-        valueMovieDetail = jsonHelper.loadDetailMovie(id)
-        EspressoIdlingResource.decrement()
-    }
-
-    fun getDetailTv(id: Int?){
-        EspressoIdlingResource.increment()
-        valueTvDetail =jsonHelper.loadDetailTvShow(id)
-        EspressoIdlingResource.decrement()
-    }*/
-
 
 }

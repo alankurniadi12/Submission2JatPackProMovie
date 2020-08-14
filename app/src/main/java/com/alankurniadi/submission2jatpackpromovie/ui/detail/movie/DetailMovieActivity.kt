@@ -35,10 +35,10 @@ class DetailMovieActivity : AppCompatActivity() {
         val factory = ViewModelFactory.getInstance(this)
 
         if (dataMovie != null) {
-            tb_title_movie.title = dataMovie!!.original_title
-            Log.e("DetailMovieActivity", dataMovie!!.id.toString())
+            tb_title_movie.title = dataMovie?.original_title
+            Log.e("DetailMovieActivity", dataMovie?.id.toString())
             val detailViewModel = ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
-            detailViewModel.getDetailMovie(dataMovie!!.id).observe(this, Observer {
+            detailViewModel.getDetailMovie(dataMovie?.id).observe(this, Observer {
                 tv_title_movie.text = it.title
                 tv_vote.text = it.vote_average.toString()
                 tv_release.text = it.release_date

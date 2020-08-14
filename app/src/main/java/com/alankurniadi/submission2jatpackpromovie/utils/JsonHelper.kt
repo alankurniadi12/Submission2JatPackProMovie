@@ -12,6 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+@Suppress("UNREACHABLE_CODE")
 class JsonHelper(private val context: Context) {
 
     fun loadTrendingWeek(): MutableLiveData<List<TrendingWeek.DataWeek>> {
@@ -33,8 +34,9 @@ class JsonHelper(private val context: Context) {
         return list
     }
 
+
+
     fun loadNowPlayingMovie(): MutableLiveData<List<NowPlayingMovie.Results>> {
-        EspressoIdlingResource.increment()
         val list = MutableLiveData<List<NowPlayingMovie.Results>> ()
         val call = RetrofitConfig().getInitInstance()
         call.getNowPlayingMovie().enqueue(object : Callback<NowPlayingMovie.ResponseNowPlaying> {
@@ -50,7 +52,6 @@ class JsonHelper(private val context: Context) {
                 list.postValue(body)
             }
         })
-        EspressoIdlingResource.decrement()
         return list
 
     }
@@ -80,6 +81,7 @@ class JsonHelper(private val context: Context) {
         call.getDetailMovie(id).enqueue(object : Callback<Detail.Movie>{
             override fun onFailure(call: Call<Detail.Movie>, t: Throwable) {
                 Log.e("DetailMovieViewModel", t.toString())
+
             }
             override fun onResponse(call: Call<Detail.Movie>, response: Response<Detail.Movie>) {
                 val body = response.body()
@@ -87,7 +89,6 @@ class JsonHelper(private val context: Context) {
                 data.postValue(body)
             }
         })
-
         return data
     }
 
