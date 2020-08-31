@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 class TrendingWeek {
     data class ResponsWeek(
-        val results: List<DataWeek>
+        val results: ArrayList<DataWeek>
     )
 
     @Parcelize

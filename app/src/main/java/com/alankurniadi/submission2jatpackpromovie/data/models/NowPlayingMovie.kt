@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 class NowPlayingMovie {
 
     data class ResponseNowPlaying (
-        val results: List<Results>
+        val results: ArrayList<Results>
     )
 
     @Parcelize

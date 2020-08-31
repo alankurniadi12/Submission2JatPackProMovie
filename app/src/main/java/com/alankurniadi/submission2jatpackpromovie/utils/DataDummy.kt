@@ -490,7 +490,7 @@ object DataDummy {
             75006,
             listOf(
                 Detail.CreateBy(1227939, "5bb869f5c3a368241b008423", "Steve Blackman", "/ui2tZkndNgit4Gsb4nRPzKyjPZx.jpg")
-            ),
+            ) as ArrayList<Detail.CreateBy>,
             "/qJxzjUjCpTPvDHldNnlbRC4OqEh.jpg",
             "The Umbrella Academy",
             "A dysfunctional family of superheroes comes together to solve the mystery of their father's death, the threat of the apocalypse and more.",
@@ -505,7 +505,7 @@ object DataDummy {
                 Detail.CreateBy(111776, "52fb6637c3a3682f251b5bdd", "Satoshi Tajiri", null),
                 Detail.CreateBy(111778, "52fb66fe9251415a2a1b3d53", "Junichi Masuda", null),
                 Detail.CreateBy(1292138, "52fb6656c3a36819b7370f5e", "Ken Sugimori", null)
-            ),
+            )as ArrayList<Detail.CreateBy>,
             "/tvjCdVRkaaab2ezM9BctkAOXeyW.jpg",
             "Pokémon",
             "Join Ash Ketchum, accompanied by his partner Pikachu, as he travels through many regions, meets new friends and faces new challenges on his quest to become a Pokémon Master.",

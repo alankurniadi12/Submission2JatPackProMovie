@@ -10,9 +10,9 @@ class Detail {
         val release_date: String? = null,
         val vote_average: Double? = null
     )
-    data class TvShow (
+    data class TvShow(
         val id: Int? = null,
-        val created_by: List<CreateBy>,
+        val created_by: ArrayList<CreateBy>,
         val backdrop_path: String? = null,
         val name: String? = null,
         val overview: String? = null,
