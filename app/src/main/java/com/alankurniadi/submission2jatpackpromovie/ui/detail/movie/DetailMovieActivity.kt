@@ -1,4 +1,4 @@
-package com.alankurniadi.submission2jatpackpromovie.ui.detail.movie
+    package com.alankurniadi.submission2jatpackpromovie.ui.detail.movie
 
 import android.os.Bundle
 import android.util.Log
